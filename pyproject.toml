@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "public-random-data"
+version = "0.1.0"
+description = ""
+authors = ["jmarkin <me@jmarkin.ru>"]
+readme = "README.md"
+packages = [{include = "public_random_data"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+socketify = "^0.0.6"
+pydantic-factories = "^1.17.1"
+pydantic = "^1.10.4"
+ujson = "^5.7.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.224"
+yapf = "^0.32.0"
+toml = "^0.10.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

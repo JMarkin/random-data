@@ -1,0 +1,84 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Random data",
+    "description": "Generate random data. Used <a href=\"https://github.com/cirospaciari/socketify.py\">socketify</a>.",
+    "contact": {
+      "email": "common@jmarkin.ru"
+    },
+    "version": "0.1.0"
+  },
+  "externalDocs": {
+    "description": "github",
+    "url": "https://github.com/JMarkin/random-data"
+  },
+  "servers": [
+    {
+      "url": "https://random.jmarkin.ru"
+    },
+    {
+      "url": "http://192.168.88.251:8000"
+    }
+  ],
+  "paths": {
+    "/example": {
+      "get": {
+        "summary": "Generate Example data",
+        "description": "ExampleData",
+        "operationId": "example-data",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Example"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Example": {
+        "type": "object",
+        "properties": {
+          "your_ip": {
+            "type": "string"
+          },
+          "your_user_agent": {
+            "type": "string"
+          },
+          "person": {
+            "$ref": "#/components/schemas/Person"
+          }
+        }
+      },
+      "Person": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer"
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}
